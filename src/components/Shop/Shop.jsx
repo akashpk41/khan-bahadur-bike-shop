@@ -5,8 +5,7 @@ import "./Shop.css";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-  console.log(cart);
-
+  const [randomBike, setRandomBike] = useState([]);
   // ! fetching products data by using use effect hooks
   useEffect(() => {
     fetch("products.json")
@@ -18,10 +17,31 @@ const Shop = () => {
     // const newCart = [cart]
     const newProducts = [...cart, products];
     if (newProducts.length > 4) {
-      alert("Sorry we can't delivery more than 4 bike right now! ");
+      alert("Sorry we can't deliver more than 4 bike right now! ");
       return;
     }
     setCart(newProducts);
+  };
+
+  // function to get a random item from an array
+  const getRandomItem = (arr) => {
+    // get random index value
+    const randomIndex = Math.floor(Math.random() * arr.length);
+
+    // get random item
+    const item = arr[randomIndex];
+    if (item === undefined) {
+      alert("Please choose first");
+      return;
+    }
+    // console.log(item);
+    setRandomBike(item);
+    // return item;
+  };
+
+  // ! clear all Cart
+  const clearAll = () => {
+    setCart([]);
   };
 
   return (
@@ -30,7 +50,7 @@ const Shop = () => {
         <div className=" col-12 col-md-9 products-container">
           <h4 className="my-3">Buy Now. What You Want</h4>
           {/* looping in the products json data for getting single data */}
-          <div class="row g-3 ">
+          <div className="row g-3 ">
             {products.map((product) => (
               <Product
                 key={product.id}
@@ -47,8 +67,27 @@ const Shop = () => {
           </h5>
 
           {cart.map((item) => (
-            <Cart cart={item} />
+            <Cart random={getRandomItem} cart={item} />
           ))}
+
+          <div className="lucky-biker bg-warning mt-3 rounded-3 ">
+            Congratulation ! You Got
+            <h5> {randomBike.name} </h5>
+          </div>
+
+          <div className="mt-3">
+            <button
+              onClick={() => getRandomItem(cart)}
+              className="btn btn-success"
+            >
+              {" "}
+              Choose 1 For Me{" "}
+            </button>
+            <button onClick={clearAll} className=" m-3 btn btn-danger">
+              {" "}
+              Choose Again{" "}
+            </button>
+          </div>
           {/*  */}
         </div>
       </div>
