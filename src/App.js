@@ -4,7 +4,7 @@ function App() {
   return (
     <div >
      <Navbar />
-     <h1 className="text-center main-title" >Khan Bahadur Shopping Mall</h1>
+     <h1 className="text-center my-3 main-title" >Khan Bahadur Shopping Mall</h1>
     </div>
   );
 }
