@@ -3,9 +3,12 @@
 }
 
 .products-container {
-  background-color: #E4AEC5
+  background-color: #0d190761;
 }
 
 .cart-container {
-  background-color: #00C897
+  background-color: #00c897;
+}
+#cart-title {
+  border-bottom: 2px solid black;
 }

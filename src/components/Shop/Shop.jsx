@@ -24,7 +24,7 @@ const Shop = () => {
         </div>
 
         <div className=" col-12 col-md-3 cart-container  ">
-          <h5 className="my-3">Order Summury</h5>
+          <h5 id="cart-title" className="my-3 ">Order Summury</h5>
         </div>
       </div>
     </div>
