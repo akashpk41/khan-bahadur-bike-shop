@@ -5,6 +5,7 @@ import "./Shop.css";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [display,setDisplay] = useState('none');
   const [randomBike, setRandomBike] = useState([]);
   // ! fetching products data by using use effect hooks
   useEffect(() => {
@@ -36,12 +37,15 @@ const Shop = () => {
     }
     // console.log(item);
     setRandomBike(item);
+    setDisplay('block')
     // return item;
   };
 
   // ! clear all Cart
   const clearAll = () => {
     setCart([]);
+    setDisplay('none')
+
   };
 
   return (
@@ -67,12 +71,12 @@ const Shop = () => {
           </h5>
 
           {cart.map((item) => (
-            <Cart random={getRandomItem} cart={item} />
+            <Cart random={getRandomItem} cart={item} key={item.id} />
           ))}
 
-          <div className="lucky-biker bg-warning mt-3 rounded-3 ">
+          <div className={`d-${display}  bg-warning mt-3 rounded-3 `}  >
             Congratulation ! You Got
-            <h5> {randomBike.name} </h5>
+            <h5 className="bg-primary text-white" > {randomBike.name} </h5>
           </div>
 
           <div className="mt-3">
