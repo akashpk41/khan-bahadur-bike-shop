@@ -1,16 +1,11 @@
 .shop-container {
-     border: 2px solid blue;
-
+  font-family: "Titillium Web", sans-serif;
 }
 
-.products-container{
-     border: 2px solid red;
-     background-color: aquamarine;
+.products-container {
+  background-color: #E4AEC5
 }
 
 .cart-container {
-     border: 2px solid rgb(136, 255, 0);
-     background-color: rgb(193, 127, 255);
-
-
+  background-color: #00C897
 }

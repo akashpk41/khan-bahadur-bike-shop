@@ -23,7 +23,7 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className=" col-12 col-md-3 cart-container">
+        <div className=" col-12 col-md-3 cart-container  ">
           <h5 className="my-3">Order Summury</h5>
         </div>
       </div>
