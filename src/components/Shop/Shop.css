@@ -1,0 +1,16 @@
+.shop-container {
+     border: 2px solid blue;
+
+}
+
+.products-container{
+     border: 2px solid red;
+     background-color: aquamarine;
+}
+
+.cart-container {
+     border: 2px solid rgb(136, 255, 0);
+     background-color: rgb(193, 127, 255);
+
+
+}
