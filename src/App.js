@@ -1,3 +1,4 @@
+import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Shop from "./components/Shop/Shop";
 
@@ -9,6 +10,7 @@ function App() {
         Khan Bahadur Shopping Mall
       </h1>
       <Shop />
+      <Footer />
     </div>
   );
 }
