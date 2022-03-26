@@ -1,7 +1,9 @@
+import Navbar from "./components/Navbar/Navbar";
+
 function App() {
   return (
     <div >
-      <h1 className="text-primary" >hello React</h1>
+     <Navbar />
     </div>
   );
 }
